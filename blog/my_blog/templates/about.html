@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+    <style type="text/css">
+        .form-control input{
+            margin-top: 15px;
+            border-radius: 25px;
+        }
+</head>
+{% block title %}
+    关于我|Benjaming_Li的小站
+{% endblock %}
+{% block path %}
+    <a href = "{% url 'home' %}">当前位置&nbsp;:&nbsp;首页&nbsp;</a>&gt;&nbsp;关于我
+{% endblock %}
+{% block content %}
+
+    <div class="archive">
+        <div id="archive">
+     <h3>
+         关于本站
+     </h3>
+
+     <blockquote>
+         linux下python web框架Django开发简易版
+         </br></br></br>
+         通过学习Django，对有关做网页相关的知识有了初步的掌握。包括正则表达式，</br></br>
+         HTML,CSS,JS等算是入门了，对于整个Django的架构也熟悉了起来，</br></br>
+         感谢铨哥，还有珈伟哥的指导与帮助，</br></br>
+         未来还有很长的路，加油！
+     </blockquote>
+     </br>
+
+     <h3>
+         关于我
+     </h3>
+
+     <blockquote>
+         热爱生活，喜欢拼搏，喜欢有压力的生活，喜欢有挑战的工作</br></br>
+         我就是我，是颜色不一样的烟火</br></br>
+         成为技术宅的路上少不了寂寞和孤独，可那有怎样，哪怕成不了大神，也要码的漂亮</br></br>
+         我是IT男，我为自己代言</br></br></br>
+
+          <strong> 最后，谢谢我的牛牛，你是我前进最大的动力</strong>
+     </blockquote>
+     </br></br>
+
+        <h2>联系我</h2>
+
+             {% if form.errors %}
+                    <p style="color: red;">
+                         请按照格式要求填写
+    　　             </p>
+             {% endif %}
+                <form action="{% url 'submiting' %}" method="POST" accept-charset="utf-8" class="contact-form">
+                     <input type="text" name="name" id="contact-name" placeholder="姓名（必填）" class="form-control">
+                   <input type="email" name="email" id="contact-email" placeholder="Email（选填）" class="form-control">
+                   <textarea rows="10" name="message" id="contact-body" placeholder="在此输入内容...（必填）" class="form-control"></textarea>
+                    <div class="buttons clearfix">  
+                    <button type="submit" class="btn btn-xlarge btn-clean-one">提交</button>
+                     </div>
+    　　         </form>
+
+
+
+
+     </div>
+    </div>
+        {% include "_comments.html" %}
+
+  {% endblock %}
+
+{% block side %}
+    {% include "_side.html" %}
+{% endblock %}

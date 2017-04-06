@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}
+    给我留言|Benjaming_Li的小站
+{% endblock %}
+{% block path %}
+<a href = "{% url 'home'%}">当前位置&nbsp;:&nbsp;</a>&gt;&gt;&nbsp;给我留言
+{% endblock %}
+{% block content %}
+<div class="archive">
+            <div id="archives">
+    <h5>
+Hi:</br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;欢迎访问我的博客，你可以留下你的足记。^_^
+    </h5>
+    </div>
+</div>
+    {% include "_comments.html" %}
+
+{% endblock %}
+
+{% block side %}
+        {% include "_side.html" %}
+{% endblock %}

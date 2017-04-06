@@ -1,0 +1,59 @@
+		<input value="" name="s" class="s query" placeholder="Search for" type="text">
+		<button type="submit" class="search-submit"><span style="font-size:20px" class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+		<div class="clearfix"></div>
+	</form>
+</section>
+
+
+
+<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=5283518956&verifier=95dfae5c&colors=d6f3f7,ffffff,666666,0082cb,ecfbfd&dpc=1"></iframe>
+				
+<section id="linkcat" class="widget widget_links">
+	<h3 class="widget-title">友情链接</h3>
+	<ul class="xoxo blogroll">
+        <li><a href="http://www.weibo.com/u/3228926767?refer_flag=1005050010_&is_all=1" target="_blank">我家傻妞</a></li></br>
+        <li><a href="http://andrewliu.tk/" target="_blank">Andrew Liu</a></li></br>
+        <li><a href="http://www.0xffffff.org/" target="_blank">浅墨的部落格</a></li></br>
+        <li><a href="http://muker.net/" target="_blank">木客</a></li></br>
+        <li><a href="http://imququ.com/" target="_blank">Jerry Qu</a></li></br>
+        <li><a href="http://www.xgezhang.com/" target="_blank">xge技术博客</a></li></br>
+        <li><a href="http://www.djangoproject.com/" target="_blank">Django官网</a></li></br>
+        <li><a href="http://github.com/chenq182" target="_blank">coder铨哥</a></li></br>
+        <li><a href="http://github.com/Hypnoes" target="_blank">coder雷兄</a></li></br>
+               
+
+               
+
+<br>
+          
+	</ul>
+</section>
+
+<script type="text/javascript">
+      /*!
+       * Create an array of word objects, each representing a word in the cloud
+       */
+      
+         //var list=[["Java", 8], ["Android", 0], ["数据库", 1], ["算法", 0]];
+         var list = {{ tagCloud|safe}};
+         
+    
+         var word_array = new Array(); 
+         
+        
+         for( i in list)
+{
+         var temp = list[i][0];
+       
+       
+         word_array.push({text:list[i][0],weight:list[i][1],link:"/articleTag/"+temp});
+
+}
+       
+           
+ 
+      $(function() {
+        // When DOM is ready, select the container element and call the jQCloud method, passing the array of words as the first argument.
+        $("#example").jQCloud(word_array);
+      });
+</script>
